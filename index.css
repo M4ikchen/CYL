@@ -30,7 +30,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 100px;
   margin-bottom: 100px;
 }
 .nav-list li {
@@ -120,7 +120,7 @@ main {
   flex: 1;
   vertical-align: top;
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 main h1 {
   text-align: center;
@@ -158,6 +158,7 @@ footer p {
     height: 230px;
     padding: 15px;
     margin-bottom: 50px;
+    gap: 40px;
   }
   .nav-list li a {
     font-size: 1rem;
@@ -171,8 +172,12 @@ footer p {
   }
 
   .socials {
-    height: 180px;
+    height: 140px;
     flex-direction: column; 
+  }
+
+  .diagonal-box {
+    height: 80px;
   }
 
   main p {
@@ -187,9 +192,10 @@ footer p {
 
   .nav-list {
     flex-direction: column;
-    height: 230px;
+    height: 150px;
     padding: 15px;
     margin-bottom: 50px;
+    gap: 15px;
   }
   .nav-list li a {
     font-size: 1rem;
