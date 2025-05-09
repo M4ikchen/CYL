@@ -5,9 +5,18 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   width: 100%;
-  height: 60px;
+  height: 40%;
+  background-image: url(../assets/img_head.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .nav-list {
@@ -17,10 +26,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 100px;
-}
-.nav-list li {
+  gap: 100px;
+  margin-bottom: 50px;
   list-style: none;
 }
 .nav-list li a {
@@ -29,34 +36,221 @@ header {
   font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  header {
-    height: 700px;
+.typewrite {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.typewrite p {
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 5px solid;
+  animation: typing 3s steps(19),
+             blink 1s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
   }
+  to {
+    width: 19ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.socials {
+  height: 80px;
+  min-width: 30%;
+  margin: 0 auto 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.socials a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: white;
+}
+.socials a:hover {
+  opacity: 0.7;
+}
+.discord {
+  width: 150px;
+  height: 60px;
+  background-color: #7289da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.teamspeak {
+  width: 150px;
+  height: 60px;
+  background-color: #3c3c3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.diagonal-box {
+  width: 100%;
+  height: 80px;
+  background: rgb( 35, 35, 35);
+  transform: skewY(-1deg);
+  margin-top: -60px;
+}
+
+main {
+  flex: 1;
+  width: 70%;
+  margin: 50px auto;
+}
+main h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.accordion li {
+  list-style: none;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.accordion li label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+label::before {
+  content: '+';
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+input[type="radio"] {
+  display: none;
+}
+.accordion .content {
+  color: #555;
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 5000px;
+  padding: 10px 10px 20px;
+}
+.accordion input[type="radio"]:checked + label::before {
+  content: '-';
+}
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 7px;
+}
+
+footer {
+  width: 100%;
+  min-height: 60px;
+  background-color: rgba( 0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
 
   .nav-list {
     flex-direction: column;
-    height: 230px;
-    padding: 15px;
-    margin-bottom: 50px;
+    height: 150px;
+    margin-bottom: 5px;
+    gap: 15px;
   }
   .nav-list li a {
+    font-size: 1rem;
+  }
+
+  .typewrite {
+    margin: 5px;
+  }
+  .typewrite p {
+    font-size: 2rem;
+  }
+
+  .socials {
+    height: 80px;
+    margin-bottom: 100px;
+  }
+  .socials a {
+    font-size: 1rem;
+  }
+  .discord {
+  width: 100px;
+  height: 40px;
+  background-color: #7289da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+ }
+  .teamspeak {
+    display: none;
+  }
+
+  .diagonal-box {
+    height: 80px;
+  }
+
+  .accordion li label {
+    font-size: 1rem;
+  }
+  label::before {
+    font-size: 1rem;
+  }
+  .content p {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 500px) {
-  header {
-    height: 600px;
-  }
+@media (max-width: 640px) {
 
   .nav-list {
     flex-direction: column;
-    height: 230px;
-    padding: 15px;
-    margin-bottom: 50px;
+    height: 150px;
+    margin-bottom: 5px;
+    gap: 15px;
   }
-  .nav-list li a {
-    font-size: 1rem;
+
+  .typewrite p {
+    font-size: 1.3rem;
   }
+
+ .diagonal-box {
+  display: none;
+ }
+
+ main h1 {
+  font-size: 3rem;
+ }
+ main p {
+  font-size: 1.5rem;
+ }
 }
